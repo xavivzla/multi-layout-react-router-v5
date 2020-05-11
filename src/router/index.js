@@ -22,12 +22,12 @@ export default () => {
       <Switch>
         <Route path='/login' component={Login} />
 
-
         <Route path='/admin/:path?' exact>
           <MainAdmin>
             <Switch>
               <Route path='/admin' exact component={Dashboard} />
               <Route path='/admin/setting' component={Setting} />
+              <Route component={() => (<div>404 Main Admin</div>)} exact path='/admin/*' />
             </Switch>
           </MainAdmin>
         </Route>
@@ -37,6 +37,7 @@ export default () => {
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/about' component={About} />
+              <Route component={() => (<div>404 Main</div>)} exact path="/*" />
             </Switch>
           </Main>
         </Route>
